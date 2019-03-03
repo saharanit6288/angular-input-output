@@ -1,0 +1,23 @@
+<div class="parent">
+  <h6 class="text-center">I Am The Parent Component!</h6>
+  <div class="d-flex">
+    <div class="col-6 child-1">
+      <app-child [child]="child1" (emitPass)="passBall($event)"></app-child>
+    </div>
+    <div class="col-6 child-2">
+      <app-child [child]="child2" (emitPass)="passBall($event)"></app-child>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <div class="row">
+    <div class="col-12 text-center">
+      <h3>Parent Component</h3>
+      <label>Parent Component</label>
+      <input type="text" #pcomponent (keyup)="0"/>
+      <p>Value of child component is: {{ CData }}</p>
+      <app-new-child [PData]="pcomponent.value" (childEvent)="changeText($event)"></app-new-child>
+    </div>
+  </div>
+</div>
